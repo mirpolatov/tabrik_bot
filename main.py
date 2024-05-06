@@ -55,7 +55,7 @@ class Forms(StatesGroup):
 
 @dp.message_handler(commands=['start'])
 async def start_order(message: types.Message):
-    if message.from_user.id == 1327286056:
+    if message.from_user.id == 5772722670:
         await message.answer('hello', reply_markup=main_rp)
 
 
@@ -160,7 +160,7 @@ async def send_videos(message: types.Message):
     for video in videos:
         video_path = os.path.join(videos_dir, video)
         with open(video_path, 'rb') as video_file:
-            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='#HappyBirthday')
+            await bot.send_video(chat_id=-1002024022104, video=video_file, caption='#HappyBirthday')
             await message.answer('video guruhga jo''natildi')
         os.remove(video_path)
 
