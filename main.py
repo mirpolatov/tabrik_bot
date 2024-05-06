@@ -103,18 +103,7 @@ async def process_description(message: types.Message, state: FSMContext):
     os.makedirs(os.path.dirname(data['file_path']), exist_ok=True)
     await bot.download_file_by_id(data['file_id'], data['file_path'])
 
-    # Databasega saqlash
-    new_video = Video(
-        file_id=data['file_id'],
-        file_path=data['file_path'],
-        full_name=data['full_name'],
-        data=data['date']
-    )
 
-    # Ensure that the new_video instance is created correctly
-    session = Session()  # Create a new session instance
-    session.add(new_video)
-    session.commit()
 
     # StatesGroupni yakunlash
     await state.finish()
