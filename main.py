@@ -1,8 +1,5 @@
 import asyncio
 import os
-
-from datetime import datetime
-
 import pytz
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
@@ -10,13 +7,15 @@ from aiogram.contrib.middlewares.logging import LoggingMiddleware
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import StatesGroup, State
 from aiogram.utils import executor
+from datetime import datetime
 from pytz import timezone
 from sqlalchemy import create_engine, Column, String, Integer, DateTime, Sequence
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-# from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from button import main_rp, order_keyboart
+
+# from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 API_TOKEN = "7045481924:AAG56pDeg9_gCOzoO-2CxT6KqnQgMsU0X9c"
 
