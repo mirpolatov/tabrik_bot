@@ -18,7 +18,7 @@ from sqlalchemy.orm import sessionmaker
 
 from button import main_rp, order_keyboart
 
-API_TOKEN = "7045481924:AAF5BwtX_AD7d4wMXkybKtM0DcgvnWVrzLc"
+API_TOKEN = "7045481924:AAEl8b8X3uKL8ztpbiHXS3EHNAlvqifoGDw"
 
 bot = Bot(API_TOKEN)
 dp = Dispatcher(bot)
