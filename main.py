@@ -156,7 +156,7 @@ async def start_food_registration(message: types.Message):
 async def send_videos(message: types.Message):
     with open(video.file_path, 'rb') as video_file:
         await bot.send_video(chat_id=-1001201500057, video=video_file,
-                             caption='#HappyBirthday @Sohibjon_Xolboboyev_777')
+                             caption='#HappyBirthday')
         await message.answer('video guruhga jo''natildi')
     os.remove(video.file_path)
     session.delete(video)
