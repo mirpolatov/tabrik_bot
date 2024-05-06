@@ -18,7 +18,7 @@ from sqlalchemy.orm import sessionmaker
 
 from button import main_rp, order_keyboart
 
-API_TOKEN = "7045481924:AAEi8g264Mweo_fjnsGAFRHso3Uo6fcTW7Y"
+API_TOKEN = "7045481924:AAF5BwtX_AD7d4wMXkybKtM0DcgvnWVrzLc"
 
 bot = Bot(API_TOKEN)
 dp = Dispatcher(bot)
@@ -102,8 +102,6 @@ async def process_description(message: types.Message, state: FSMContext):
     # Fayl saqlash
     os.makedirs(os.path.dirname(data['file_path']), exist_ok=True)
     await bot.download_file_by_id(data['file_id'], data['file_path'])
-
-
 
     # StatesGroupni yakunlash
     await state.finish()
