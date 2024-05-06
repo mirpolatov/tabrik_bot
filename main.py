@@ -154,14 +154,17 @@ async def start_food_registration(message: types.Message):
 
 @dp.message_handler(commands=['send_videos'])
 async def send_videos(message: types.Message):
-    with open(video.file_path, 'rb') as video_file:
-        await bot.send_video(chat_id=-1001201500057, video=video_file,
-                             caption='#HappyBirthday')
-        await message.answer('video guruhga jo''natildi')
-    os.remove(video.file_path)
-    session.delete(video)
-    await message.answer('Video o\'chirildi')
+    videos_dir = "videos/"
+    videos = os.listdir(videos_dir)
 
+    for video in videos:
+        video_path = os.path.join(videos_dir, video)
+        with open(video_path, 'rb') as video_file:
+            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='#HappyBirthday')
+            await message.answer('video guruhga jo''natildi')
+        os.remove(video_path)
+
+    await message.answer('Video o\'chirildi')
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
