@@ -14,7 +14,7 @@ from pytz import timezone
 from sqlalchemy import create_engine, Column, String, Integer, DateTime, Sequence
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from apscheduler.schedulers.asyncio import AsyncIOScheduler
+# from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from button import main_rp, order_keyboart
 
@@ -168,17 +168,13 @@ async def start_food_registration(message: types.Message):
 
 @dp.message_handler(commands=['send_videos'])
 async def send_videos(message: types.Message):
-    videos = session.query(Video).all()
-    for video in videos:
-        if video:
-            with open(video.file_path, 'rb') as video_file:
-                await bot.send_video(chat_id=-1001201500057, video=video_file, caption='#HappyBirthday')
-                await message.answer('video guruhga jo''natildi')
-            os.remove(video.file_path)
-            session.delete(video)
-            await message.answer('Video o\'chirildi')
-        else:
-            await message.answer("Video mavjud emas")
+    with open(video.file_path, 'rb') as video_file:
+        await bot.send_video(chat_id=-1001201500057, video=video_file,
+                             caption='#HappyBirthday @Sohibjon_Xolboboyev_777')
+        await message.answer('video guruhga jo''natildi')
+    os.remove(video.file_path)
+    session.delete(video)
+    await message.answer('Video o\'chirildi')
 
 
 if __name__ == '__main__':
