@@ -160,7 +160,7 @@ async def send_videos(message: types.Message):
     for video in videos:
         video_path = os.path.join(videos_dir, video)
         with open(video_path, 'rb') as video_file:
-            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='#HappyBirthday')
+            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='9-Май Хотира ва Қадрлаш куни !')
             await message.answer('video guruhga jo''natildi')
         os.remove(video_path)
 
