@@ -17,7 +17,7 @@ from button import main_rp, order_keyboart
 
 # from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-API_TOKEN = "7045481924:AAG56pDeg9_gCOzoO-2CxT6KqnQgMsU0X9c"
+API_TOKEN = "7045481924:AAEm4J9QOoJGGHpHIjA_3kr7BddY90d6Sp0"
 
 bot = Bot(API_TOKEN)
 dp = Dispatcher(bot)
@@ -160,7 +160,7 @@ async def send_videos(message: types.Message):
     for video in videos:
         video_path = os.path.join(videos_dir, video)
         with open(video_path, 'rb') as video_file:
-            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='9-Май Хотира ва Қадрлаш куни !')
+            await bot.send_video(chat_id=-1001201500057, video=video_file, caption='#HappyBirthday')
             await message.answer('video guruhga jo''natildi')
         os.remove(video_path)
 
