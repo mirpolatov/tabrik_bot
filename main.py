@@ -25,7 +25,8 @@ dp.middleware.setup(LoggingMiddleware())
 
 storage = MemoryStorage()
 dp.storage = storage
-DATABASE_URL = 'sqlite:///video.db'
+DATABASE_URL = "postgresql://postgres:1@localhost:5432/tabrik"
+# DATABASE_URL = 'sqlite:///video.db'
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
