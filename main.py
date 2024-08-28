@@ -17,7 +17,7 @@ from button import main_rp, order_keyboart
 
 # from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-API_TOKEN = "7045481924:AAEm4J9QOoJGGHpHIjA_3kr7BddY90d6Sp0"
+API_TOKEN = "7045481924:AAGINPTn6yKJHb5gP81ExJYcLB5FbNaNt7Q"
 
 bot = Bot(API_TOKEN)
 dp = Dispatcher(bot)
